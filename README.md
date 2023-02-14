@@ -1,11 +1,10 @@
 # Welcome👏 to the planets✨
 
-| Per aspera ad astra
-
 ------
 
 没有一个冬天不可逾越，没有一个春天不会来临。最慢的步伐不是跬步，而是徘徊，最快的脚步不是冲刺，而是坚持。
 
+## Per aspera ad astra.
 
 >  * Organize knowledge and study notes
 >  * Publish diaries, essays, what you see and think
