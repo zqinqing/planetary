@@ -17,6 +17,12 @@
             display: block;
         }
 
+        html[lang=zh-CN] .b_1 {
+            width: 300px; 
+            height: 300px; 
+            border: 1px solid red;
+        }
+
         html[lang=zh-CN] .body-bg {
             background: #ebf6ec;
         }
@@ -44,41 +50,42 @@
     </style>
 </head>
 <body class="body-bg">
-    <p class="m-20">了解 位图 和 矢量图 的区别。</p>
-    <ul class="m-26">
-        <li>
-            位图：放大会失真图像边缘有锯齿；是由像素点组成；前端的 Canvas 就是位图效果。
-        </li>
-        <li>
-            矢量图：放大不会失真；使用 XML 描述图形。
-        </li>
-    </ul>
-    <p class="m-20">
-        SVG 是矢量图的一种格式用 XML 来描述图形。
-    </p>
+    <!-- 了解 位图 和 矢量图 的区别。 -->
 
-    <p class="m-20">
+    <!-- 
+        位图：放大会失真图像边缘有锯齿；是由像素点组成；前端的 Canvas 就是位图效果。
+
+        矢量图：放大不会失真；使用 XML 描述图形。
+     -->
+    <!-- 
+        SVG 是矢量图的一种格式用 XML 来描述图形。 
+
         SVG 可以用 css 设置样式，也可以使用 js 对 SVG 进行操作。
-    </p>
-
-    <p class="m-20">
+    -->
+        
+    <!-- 
         SVG 的几种使用方法：
-    </p>
 
-    <ul class="m-26">
-        <li>在浏览器直接打开</li>
-        <li>内嵌到 HTML 中（推荐⭐⭐⭐）</li>
-        <li>CSS 背景图（推荐⭐）</li>
-        <li>使用 img 标签引入（推荐⭐）</li>
-        <li>使用 iframe 标签引入（不推荐❌）</li>
-        <li>使用 embed 标签引入（不推荐❌）</li>
-        <li>使用 object 标签引入（不推荐❌）</li>
-    </ul>
+        在浏览器直接打开
+
+        内嵌到 HTML 中（推荐⭐⭐⭐）
+
+        CSS 背景图（推荐⭐）
+
+        使用 img 标签引入（推荐⭐）
+
+        使用 iframe 标签引入（不推荐❌）
+
+        使用 embed 标签引入（不推荐❌）
+
+        使用 object 标签引入（不推荐❌）
+     -->
+        
     <!-- 
         SVG默认宽高
         1、在 HTML 中使用 SVG ，直接用 <svg> 标签即可。
      -->
-    <svg class="white m-20" style="background-color: white;"></svg>
+    <svg class="white m-20"></svg>
     <!-- 
         在不给 <svg> 设置宽高时，它的默认宽度是 300px ，默认高度是 150px 。这点和 <canvas> 是一样的。
 
@@ -89,6 +96,8 @@
         矩形 rect
         矩形使用 <rect> 标签，默认填充色是黑色，当只设置宽高时，渲染出来的矩形就是黑色的矩形。
         稍后还会说明如何设置样式（比如边框、填充色等），这里只列出矩形基础属性：
+        
+        注意: 这些参数都不带单位。
 
         x: 左上角x轴坐标
         y: 左上角y轴坐标
@@ -100,18 +109,67 @@
       -->
 
       <p style="padding-left: 20px;">基础款（只设置宽高）</p>
-      <svg class="m-20 white" style="width: 300px; height: 300px; border: 1px solid red;">
+      <svg class="m-20 white b_1">
         <rect width="200px" height="200px"></rect>
       </svg>
 
-      <p style="padding-left: 20px;">设置矩形位置<br /><span>通过 x 和 y 可以设置矩形位置</span></p>
-      <svg class="m-20 white" style="width: 300px; height: 300px; border: 1px solid red">
+      <p class="m-20">设置矩形位置<br /><span>通过 x 和 y 可以设置矩形位置</span></p>
+      <svg class="m-20 white b_1">
         <rect
-            x="50px"
-            y="30px"
+            x="50"
+            y="30"
             width="200px"
             height="200px"
         ></rect>
       </svg>
+
+      <p class="m-20">圆角矩形</p>
+      <svg class="m-20 white b_1">
+            <rect
+                width="200"
+                height="60"
+                rx="26"
+                ry="18"
+            ></rect>
+      </svg>
+
+      <!-- 
+        rx 是设置 x 轴的半径， ry 是设置 y 轴的半径。
+
+        rx 的最大值是矩形宽度的一半，ry 的最大值是矩形高度的一半。
+       -->
+
+       <p class="m-20">
+        当只设置 rx 或者 ry 一个值时，另一个属性也会用一样的值。
+       </p>
+
+       <svg class="m-20 white b_1">
+            <rect
+                width="200"
+                height="60"
+                rx="30"
+            ></rect>
+       </svg>
+       <!-- 
+        此时 rx 跟 ry 都是 30
+        -->
+
+        <p class="m-20">rect 版的圆形</p>
+        <!-- 
+            圆角的概念和 CSS 的 border-radius 有点像，所以有没有一种可能，用 <rect> 也可以画圆形呢？
+         -->
+
+         <svg class="m-20 white b_1">
+            <rect
+                width="160"
+                height="160"
+                rx="130"
+            ></rect>
+         </svg>
+         <!-- 
+            只要把宽高设成一样，圆角设成宽度的一半就能实现圆形。这是在 HTML 里的实现方式之一。
+
+            同理也用 <rect> 实现椭圆，但在 SVG 中是不会这样做的。因为 SVG 里有专门的圆形和椭圆的标签。
+          -->
 </body>
 </html>
