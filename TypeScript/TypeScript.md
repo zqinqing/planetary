@@ -147,6 +147,65 @@ JS：
 
 ### 2.4、TypeScript 带来了什么优势
 
+js code 勾股定理的公式：
+
+```javascript
+		# 给出平面 x 和 y 的长度，算出斜边的长度。
+		function demo(data){
+      	return Math.sqrt(data.x ** 2 + data.y ** 2);
+    }
+		demo(); // TypeError: undefined is not an object (evaluating 'data.x')
+```
+
+
+
+ts
+
+```typescript
+		function tsDemo(data: {x: number, y: number}){
+    		return Math.sqrt(data.x ** 2 + data.y ** 2);
+    }
+		tsDemo(); // Expected 1 arguments, but got 0. 应有 1 个参数，但获得 0 个。
+		tsDemo({x: 1, y: 123}); // true
+```
+
+
+
+Ts 的一个类型定义
+
+```typescript
+		# TypeScript 中类型别名的一个语法。
+		type Point = { x: number, y: number };
+		
+		# 或者使用 interface 
+    interface Point = { x: number, y: number };
+
+		function tsDome(data: Point) {
+				return Math.sqrt(data.x ** 2 + data.y ** 2);  
+		}
+		tsDemo({x: 1, y: 123});
+```
+
+
+
+:dizzy: __TypeScript 相对于 JavaScript 的优势。__
+
+1、Ts 的静态类型，使得我们在开发过程中，就能发现潜在问题。**错误提示！**
+
+2、用 Ts 编辑代码，有更友好的编辑器自动提示。**语法提示！**
+
+3、类型的一些声明，可以让我们直观的看到，我们代码里面的一些语意。**可读性强！**
+
+
+
+### 2.5、TypeScript 的基础语法
+
+如果需要运行 Ts ，需要有基于 Node 的一个开发环境。
+
+所以需要安装 Node 在电脑上，首先从 [node 官网](https://nodejs.org/en/ "node 官网") 下载 node 的安装包。
+
+- 下载时，注意使用长期稳定的安装版本 Recommended For Most Users。
+
 
 
 
@@ -155,7 +214,7 @@ JS：
 
 
 
-## 2、爬虫功能开发
+## 3、爬虫功能开发
 
 
 
@@ -163,7 +222,7 @@ JS：
 
 
 
-## 3、TS 语法进阶
+## 4、TS 语法进阶
 
 
 
@@ -171,7 +230,7 @@ JS：
 
 
 
-## 4、项目接口开发
+## 5、项目接口开发
 
 
 
@@ -179,7 +238,7 @@ JS：
 
 
 
-## 5、TS 高级语法
+## 6、TS 高级语法
 
 
 
@@ -187,7 +246,7 @@ JS：
 
 
 
-## 6、项目代码重构
+## 7、项目代码重构
 
 
 
@@ -195,7 +254,7 @@ JS：
 
 
 
-## 7、项目前端开发
+## 8、项目前端开发
 
 
 
@@ -203,7 +262,7 @@ JS：
 
 
 
-## 8、学习总结
+## 9、学习总结
 
 
 
