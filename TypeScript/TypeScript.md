@@ -1,4 +1,4 @@
-# TypeScript
+# TypeScript[^1]
 
 **TypeScript** 2012 年由微软正式发布，包括 Angular、React、Vue 等广泛使用的前端框架，都在使用 TypeScript 进行开发。
 
@@ -8,13 +8,14 @@
 
 
 
-### 1.1、关于 TypeScript
+### 1.1、TypeScript 的定义
 
 >TypeScript 是 JavaScript 的**超集**。
 >
 >> TypeScript 是 JavaScript 类型的超集（superset），它可以编译成纯 JavaScript。
 >>
 >> - TS 拥有类型机制，TypeScript 不会被直接执行，而是被编译成  JavaScript  之后才能够运行。
+>> - TS 不能直接在浏览器环境或者 Node 环境下运行，必须通过它的编译器编译为普通的 js 后运行。
 >>
 >> TypeScript 可以在任何浏览器、任何计算机和任何操作系统上运行，并且是开源的。
 >>
@@ -58,7 +59,8 @@
 
 1、官方网站: https://www.typescriptlang.org/
 2、中文官网: https://www.typescriptlang.org/zh/
-3、个人中文网站： https://www.tslang.cn/
+3、个人中文网站: https://www.tslang.cn/
+4、官方网站 Playround [编译器](https://www.typescriptlang.org/zh/play?#code/PTAEHUFMBsGMHsC2lQBd5oBYoCoE8AHSAZVgCcBLA1UABWgEM8BzM+AVwDsATAGiwoBnUENANQAd0gAjQRVSQAUCEmYKsTKGYUAbpGF4OY0BoadYKdJMoL+gzAzIoz3UNEiPOofEVKVqAHSKymAAmkYI7NCuqGqcANag8ABmIjQUXrFOKBJMggBcISGgoAC0oACCbvCwDKgU8JkY7p7ehCTkVDQS2E6gnPCxGcwmZqDSTgzxxWWVoASMFmgYkAAeRJTInN3ymj4d-jSCeNsMq-wuoPaOltigAKoASgAywhK7SbGQZIIz5VWCFzSeCrZagNYbChbHaxUDcCjJZLfSDbExIAgUdxkUBIursJzCFJtXydajBBCcQQ0MwAUVWDEQC0gADVHBQGNJ3KAALygABEAAkYNAMOB4GRonzFBTBPB3AERcwABS0+mM9ysygc9wASmCKhwzQ8ZC8iHFzmB7BoXzcZmY7AYzEg-Fg0HUiQ58D0Ii8fLpDKZgj5SWxfPADlQAHJhAA5SASPlBFQAeS+ZHegmdWkgR1QjgUrmkeFATjNOmGWH0KAQiGhwkuNok4uiIgMHGxCyYrA4PCCJSAA "将 TS 编译为 JS")
 
 
 
@@ -77,9 +79,11 @@
 js 动态类型
 
 ```javascript
-    let a = 123;    // true
-    a = '123'       // true
+    let a = 123;    // true Number 类型
+    a = '123'       // true String 类型
 ```
+
+**js 中，变量的类型可以随时的改变。**
 
 
 
@@ -87,7 +91,8 @@ ts 静态类型
 
 ```typescript
     let b: number = 123;      // true
-    b = '一二三'               // 不能将类型“string”分配给类型“number”。
+    b = '一二三'               // 不能将类型“String”分配给类型“number”。
+		b = 456                   // true
 ```
 
 __ts 中的变量是静态类型，只能存单一类型的值。__
@@ -96,35 +101,41 @@ __ts 中的变量是静态类型，只能存单一类型的值。__
 
 ### 2.2、TypeScript 编译
 
+
+
 TS：
 
 ```typescript
-"use strict";
+    "use strict";
 
-interface Person {
-    name: string
-}
+    interface Person {
+        name: string
+    }
 
-const teacher: Person = {
-    name: 'Dell Lee'
-}
+    const teacher: Person = {
+        name: 'Dell Lee'
+    }
 ```
 
-👇 编译为
+
+
+👇 编译为 [编译网址](https://www.tslang.cn/play/index.html) 
+
+
 
 JS：
 
 ```javascript
-"use strict";
-const teacher = {
-    name: 'Dell Lee'
-};
+    "use strict";
+    const teacher = {
+        name: 'Dell Lee'
+    };
 ```
 
 
 
 - TypeScript 会被编译成普通的 JavaScript ，然后再去运行。
-- TypeScript 是 JavaScript 的超集，它有自己的静态类型，所以它不能直接运行，需要经过一系列的编译，编译为普通的 JavaScript 代码，才能运行。
+- TypeScript 是 JavaScript 的超集，它有自己的静态类型，所以它不能直接在浏览器和Node中运行，需要经过一系列的编译，编译为普通的 JavaScript 代码，才能运行。
 
 
 
@@ -256,7 +267,7 @@ const teacher = {
 
 
 
+## 参考资料
 
-
-
+[^1]: 此文档由 Markdown 语法书写✍️，作者 Daniel :wave:   **[Markdown语法参考链接](https://markdown.com.cn "markdown教程")**。 
 
